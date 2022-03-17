@@ -18,7 +18,7 @@ public class Candidate {
         return " Пол:" + (this.gender == Gender.FEMALE ? " женский. " : " мужской. ") +
                 "Имя: " + name + ". " +
                 "Релевантность резюме " + relevance + ". " +
-                "Оценка по собеседованю " + rating+ ".";
+                "Оценка по собеседованю " + rating + ".";
     }
     //String securityAnswer = man.getAge() >= 18 ? "Все в порядке, проходите!" : "Этот фильм не подходит для вашего возраста!";
 
