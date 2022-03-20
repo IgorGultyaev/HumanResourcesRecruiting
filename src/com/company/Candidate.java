@@ -1,6 +1,7 @@
 package com.company;
 
-public class Candidate {
+public class Candidate implements Comparable<Candidate> {
+
     private String name;
     private Gender gender;
     private int relevance;
@@ -20,7 +21,7 @@ public class Candidate {
                 "Релевантность резюме " + relevance + ". " +
                 "Оценка по собеседованю " + rating + ".";
     }
-    //String securityAnswer = man.getAge() >= 18 ? "Все в порядке, проходите!" : "Этот фильм не подходит для вашего возраста!";
+
 
     public int getRelevance() {
         return relevance;
@@ -28,5 +29,23 @@ public class Candidate {
 
     public int getRating() {
         return rating;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int compareTo(Candidate o) {
+        int result = 0;
+        if (getRelevance() > o.getRelevance()) {
+            result = -1;
+        } else if (getRelevance() < o.getRelevance()) {
+            result = 1;
+        } else if (getRating() < o.getRating()) {
+            result = 1;
+        } else result = -1;
+
+        return result;
     }
 }

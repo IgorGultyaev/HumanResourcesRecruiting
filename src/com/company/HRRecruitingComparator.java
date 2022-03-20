@@ -14,6 +14,11 @@ public class HRRecruitingComparator implements Comparator<Candidate> {
         } else if (o1.getRating() < o2.getRating()) {
             result = 1;
         } else result = -1;
+
+        if (o1.toString().equals(o2.toString())) {
+            return 0;
+        }
         return result;
+
     }
 }
