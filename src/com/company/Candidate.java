@@ -22,7 +22,6 @@ public class Candidate implements Comparable<Candidate> {
                 "Оценка по собеседованю " + rating + ".";
     }
 
-
     public int getRelevance() {
         return relevance;
     }
@@ -37,15 +36,18 @@ public class Candidate implements Comparable<Candidate> {
 
     @Override
     public int compareTo(Candidate o) {
-        int result = 0;
-        if (getRelevance() > o.getRelevance()) {
-            result = -1;
-        } else if (getRelevance() < o.getRelevance()) {
-            result = 1;
-        } else if (getRating() < o.getRating()) {
-            result = 1;
-        } else result = -1;
 
-        return result;
+        if (getRelevance() > o.getRelevance()) {
+            return -1;
+        } else if (getRelevance() < o.getRelevance()) {
+            return 1;
+        } else if (getRating() < o.getRating()) {
+            return 1;
+        } else if (getRating() > o.getRating()) {
+            return -1;
+        } else {
+            return name.compareTo(o.getName());
+        }
+
     }
 }

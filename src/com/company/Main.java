@@ -29,13 +29,11 @@ public class Main {
         Set<Candidate> candidatesRating = new TreeSet(candidates);
         candidates.clear();
 
-//        Set<Candidate> candidatesRating = TreeSet(Candidate<candidates> );
-//
-
         for (Candidate candidate : candidatesRating
         ) {
             System.out.println(candidate);
         }
+        System.out.println(candidates);
 
     }
 
